@@ -12,10 +12,10 @@
   border-bottom: 1px solid $border-color;
 
   .info {
-    font-style: 18px;
+    font-size: 18px;
     font-style: italic;
     text-align: center;
-    border-right: $border-color;
+    border-right: 1px solid $border-color;
     min-width: $info-cell-width;
   }
 
