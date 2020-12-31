@@ -11,9 +11,10 @@ export class Formula extends ExcelComponent {
   }
 
   toHTML() {
-    return html`
-    <div class="info">fx</div>
-    <div class="input" contenteditable spellcheck="false"></div>`
+    return /* html */ `
+      <div class="info">fx</div>
+      <div class="input" contenteditable spellcheck="false"></div>
+    `
   }
 
   onInput(event) {
