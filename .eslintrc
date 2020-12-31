@@ -6,7 +6,7 @@
     "node": true
   },
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["warn", 2, { "MemberExpression": 1 }],
     "semi": "off",
     "arrow-parens": "off",
     "comma-dangle": "off",
