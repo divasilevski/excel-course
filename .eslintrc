@@ -12,7 +12,8 @@
     "comma-dangle": "off",
     "object-curly-spacing": "off",
     "require-jsdoc": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "operator-linebreak": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
