@@ -6,14 +6,15 @@
     "node": true
   },
   "rules": {
-    "indent": ["warn", 2, { "MemberExpression": 1 }],
+    "indent": ["warn", 2, { "MemberExpression": 1, "SwitchCase": 1 }],
     "semi": "off",
     "arrow-parens": "off",
     "comma-dangle": "off",
     "object-curly-spacing": "off",
     "require-jsdoc": "off",
     "no-undef": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "space-before-function-paren": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
