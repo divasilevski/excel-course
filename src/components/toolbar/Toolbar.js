@@ -10,6 +10,7 @@ export class Toolbar extends ExecelStateComponent {
     super($root, {
       name: 'Toolbar',
       listeners: ['click'],
+      subscribe: ['currentStyles'],
       ...options,
     })
   }
@@ -26,13 +27,15 @@ export class Toolbar extends ExecelStateComponent {
     return this.template
   }
 
+  storeChanged({ currentStyles }) {
+    this.setState(currentStyles)
+  }
+
   onClick(event) {
     const $target = $(event.target)
     if ($target.data.type === 'button') {
       const value = JSON.parse($target.data.value)
-      const key = Object.keys(value)[0]
       this.$emit('toolbar:applyStyle', value)
-      this.setState({ [key]: value[key] })
     }
   }
 }

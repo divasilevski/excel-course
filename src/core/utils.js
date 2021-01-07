@@ -26,3 +26,16 @@ export function isEqual(a, b) {
   }
   return a === b
 }
+
+export function camelToDashCase(camel) {
+  return camel.replace(
+    /[A-Z]/g,
+    (m) => '-' + m.toLowerCase()
+  )
+}
+
+export function toInlineStyles(styles = {}) {
+  return Object.keys(styles)
+    .map((key) => `${camelToDashCase(key)}: ${styles[key]}`)
+    .join(';')
+}
