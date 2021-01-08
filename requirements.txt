@@ -1,8 +1,0 @@
-Webpack
-  Babel
-  Scss
-  Eslint
-  Modes
-    -devmode
-    -prodmode
-Git

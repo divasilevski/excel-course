@@ -1,6 +1,7 @@
 import { $ } from '../../core/dom'
 import { Emitter } from '../../core/Emmiter'
 import { StoreSubscriber } from '../../core/StoreSubscriber'
+import { preventDefault } from '../../core/utils'
 import { updateDate } from '../../redux/actions'
 
 export class Excel {
@@ -31,6 +32,12 @@ export class Excel {
   }
 
   init() {
+    if (process.env.NODE_ENV === 'production') {
+      document.addEventListener(
+        'contextmenu',
+        preventDefault
+      )
+    }
     this.store.dispatch(updateDate())
     this.subscriber.subscribeComponents(this.components)
     this.components.forEach((component) => component.init())
@@ -40,6 +47,10 @@ export class Excel {
     this.subscriber.unsubscribeFromStore()
     this.components.forEach((component) =>
       component.destroy()
+    )
+    document.removeEventListener(
+      'contextmenu',
+      preventDefault
     )
   }
 }
